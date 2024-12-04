@@ -32,7 +32,7 @@ body {
   animation: gradientAnimation 16s ease infinite;
   display: flex;
   flex-direction: column;
-  max-height: auto;
+  min-height: 100vh;
 }
 body::before {
   content: "";
@@ -142,10 +142,8 @@ header .navbar .social-icon a:hover {
   align-items: center; /* Centre horizontalement les photos */
   padding: 2rem;
   overflow: hidden; /* Évite le scroll si nécessaire */
-}
-
-#photos,
-#design {
+  min-height: 100vh;
+  position: relative;
   /* Lightbox */
 }
 #photos .img-container,
@@ -178,10 +176,7 @@ header .navbar .social-icon a:hover {
 #photos .img-container .overlay,
 #design .img-container .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
@@ -326,19 +321,31 @@ footer nav a:hover {
 }
 
 @media (max-width: 768px) {
-  #about img {
+  html,
+  body {
+    height: inherit;
+  }
+  body {
+    background-size: 400% 400%;
+    /* Ajuster la taille du gradient */
+  }
+  body #about img {
     width: 200px;
   }
-  footer nav p,
-  footer nav a {
+  body footer nav p,
+  body footer nav a {
     width: 50%;
   }
-  footer nav p::after {
+  body footer nav p::after {
     display: none;
   }
 }
 @media (max-width: 425px) {
-  footer nav {
+  body {
+    background-size: 300% 300%;
+    /* Réduire encore plus pour des écrans plus petits */
+  }
+  body footer nav {
     flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */

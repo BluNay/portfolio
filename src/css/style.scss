@@ -57,6 +57,7 @@ $transition-speed: 0.3s;
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 // --- ANIMATIONS ---
+
 @keyframes gradientAnimation {
 	0% {
 		background-position: 0% 50%;
@@ -113,7 +114,7 @@ body {
 	animation: gradientAnimation 16s ease infinite;
 	display: flex;
 	flex-direction: column;
-	max-height: auto;
+	min-height: 100vh;
 
 	&::before {
 		content: "";
@@ -242,6 +243,7 @@ header {
 }
 
 // --- PHOTOS & DESIGN ---
+
 #photos,
 #design {
 	flex: 1 0 auto;
@@ -251,10 +253,8 @@ header {
 	align-items: center; /* Centre horizontalement les photos */
 	padding: 2rem;
 	overflow: hidden; /* Évite le scroll si nécessaire */
-}
-
-#photos,
-#design {
+	min-height: 100vh;
+	position: relative;
 	.img-container {
 		position: relative;
 		overflow: hidden;
@@ -283,10 +283,7 @@ header {
 
 		.overlay {
 			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
+			inset: 0;
 			background: $color-overlay;
 			display: flex;
 			justify-content: center;
@@ -444,28 +441,38 @@ footer {
 
 // --- MEDIA QUERIES ---
 @media (max-width: 768px) {
-	#about img {
-		width: 200px;
+	html,
+	body {
+		height: inherit;
 	}
-
-	footer {
-		nav {
-			p,
-			a {
-				width: 50%;
-			}
-
-			p::after {
-				display: none;
-			}
+	body {
+		background-size: 400% 400%;
+		#about img {
+			width: 200px;
 		}
+
+		footer {
+			nav {
+				p,
+				a {
+					width: 50%;
+				}
+
+				p::after {
+					display: none;
+				}
+			}
+		} /* Ajuster la taille du gradient */
 	}
 }
 
 @media (max-width: 425px) {
-	footer {
-		nav {
-			flex-direction: column;
-		}
+	body {
+		background-size: 300% 300%;
+		footer {
+			nav {
+				flex-direction: column;
+			}
+		} /* Réduire encore plus pour des écrans plus petits */
 	}
 }
