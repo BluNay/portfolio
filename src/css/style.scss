@@ -29,12 +29,10 @@
 $color-primary: #7283ff; // Bleu doux
 $color-secondary: #a8c4ff; // Bleu pâle
 $color-hover: #839bff; // Lavande
-$color-background: linear-gradient(
-	135deg,
-	#c3dfe7,
-	$color-secondary,
-	$color-primary
-); // Gradient d'arrière-plan
+$color-background: linear-gradient(135deg,
+		#c3dfe7,
+		$color-secondary,
+		$color-primary); // Gradient d'arrière-plan
 $color-text-light: #ffffff;
 $color-text-dark: #333;
 $color-accent: #007bff; // Accent hover
@@ -52,7 +50,7 @@ $font-size-base: 1rem;
 $font-size-large: 1.5rem;
 $font-size-small: 0.9rem;
 $line-height: 1.6;
-$border-radius: 8px;
+$border-radius: 50px;
 $transition-speed: 0.3s;
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -106,6 +104,7 @@ body {
 	height: 100%;
 	margin: 0;
 }
+
 body {
 	position: relative;
 	font-family: $font-main;
@@ -132,6 +131,7 @@ body {
 
 // --- NAVBAR ---
 header {
+
 	// flex: 0 0 auto; /* Taille fixe en fonction de son contenu */
 	.navbar {
 		background: rgba(255, 255, 255, 0.1);
@@ -217,16 +217,20 @@ header {
 #accueil {
 	display: flex;
 	flex-direction: column;
-	justify-content: center; /* Centre verticalement les photos */
-	align-items: center; /* Centre horizontalement les photos */
+	justify-content: center;
+	/* Centre verticalement les photos */
+	align-items: center;
+	/* Centre horizontalement les photos */
 	padding: 2rem;
 	overflow: hidden;
 	font-family: $font-display;
-	font-weight: 900; /* Évite le scroll si nécessaire */
+	font-weight: 900;
+	/* Évite le scroll si nécessaire */
 }
 
 // --- SECTION ABOUT ---
 #about {
+
 	// --- SECTION ACCUEIL ---
 	section {
 		img {
@@ -249,12 +253,16 @@ header {
 	flex: 1 0 auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: center; /* Centre verticalement les photos */
-	align-items: center; /* Centre horizontalement les photos */
+	justify-content: center;
+	/* Centre verticalement les photos */
+	align-items: center;
+	/* Centre horizontalement les photos */
 	padding: 2rem;
-	overflow: hidden; /* Évite le scroll si nécessaire */
+	overflow: hidden;
+	/* Évite le scroll si nécessaire */
 	min-height: 100vh;
 	position: relative;
+
 	.img-container {
 		position: relative;
 		overflow: hidden;
@@ -362,6 +370,7 @@ header {
 	width: 10rem;
 	padding: 10px 20px;
 }
+
 .btn-accueil,
 .btn-custom {
 	margin-top: 20px;
@@ -383,6 +392,7 @@ header {
 // --- SECTION ACCUEIL ---
 #contact,
 #legal {
+
 	a {
 		color: rgba(255, 255, 255, 0.8);
 		text-decoration: none;
@@ -392,17 +402,25 @@ header {
 			color: $color-hover;
 		}
 	}
+
+	img {
+		border: 4px solid rgba(255, 255, 255, 0.8);
+	}
 }
 
 main#about,
 main#contact,
 main#legal {
-	flex: 1 0 auto; /* Prend tout l'espace restant */
+	flex: 1 0 auto;
+	/* Prend tout l'espace restant */
 	display: flex;
 	flex-direction: column;
-	justify-content: center; /* Centre verticalement le contenu */
-	align-items: center; /* Centre horizontalement le contenu */
-	padding: 2rem; /* Ajoutez un peu de padding */
+	justify-content: center;
+	/* Centre verticalement le contenu */
+	align-items: center;
+	/* Centre horizontalement le contenu */
+	padding: 2rem;
+	/* Ajoutez un peu de padding */
 }
 
 // --- FOOTER ---
@@ -441,18 +459,22 @@ footer {
 
 // --- MEDIA QUERIES ---
 @media (max-width: 768px) {
+
 	html,
 	body {
 		height: inherit;
 	}
+
 	body {
 		background-size: 400% 400%;
+
 		#about img {
 			width: 200px;
 		}
 
 		footer {
 			nav {
+
 				p,
 				a {
 					width: 50%;
@@ -462,17 +484,22 @@ footer {
 					display: none;
 				}
 			}
-		} /* Ajuster la taille du gradient */
+		}
+
+		/* Ajuster la taille du gradient */
 	}
 }
 
 @media (max-width: 425px) {
 	body {
 		background-size: 300% 300%;
+
 		footer {
 			nav {
 				flex-direction: column;
 			}
-		} /* Réduire encore plus pour des écrans plus petits */
+		}
+
+		/* Réduire encore plus pour des écrans plus petits */
 	}
 }

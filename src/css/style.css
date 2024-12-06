@@ -52,7 +52,7 @@ header .navbar {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   margin-top: 20px;
-  border-radius: 8px;
+  border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -115,12 +115,15 @@ header .navbar .social-icon a:hover {
 #accueil {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centre verticalement les photos */
-  align-items: center; /* Centre horizontalement les photos */
+  justify-content: center;
+  /* Centre verticalement les photos */
+  align-items: center;
+  /* Centre horizontalement les photos */
   padding: 2rem;
   overflow: hidden;
   font-family: "ClashDisplay", sans-serif;
-  font-weight: 900; /* Évite le scroll si nécessaire */
+  font-weight: 900;
+  /* Évite le scroll si nécessaire */
 }
 
 #about section img {
@@ -138,10 +141,13 @@ header .navbar .social-icon a:hover {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centre verticalement les photos */
-  align-items: center; /* Centre horizontalement les photos */
+  justify-content: center;
+  /* Centre verticalement les photos */
+  align-items: center;
+  /* Centre horizontalement les photos */
   padding: 2rem;
-  overflow: hidden; /* Évite le scroll si nécessaire */
+  overflow: hidden;
+  /* Évite le scroll si nécessaire */
   min-height: 100vh;
   position: relative;
   /* Lightbox */
@@ -259,7 +265,7 @@ header .navbar .social-icon a:hover {
   background: #7283ff;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   font-weight: bold;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -281,16 +287,24 @@ header .navbar .social-icon a:hover {
 #legal a:hover {
   color: #839bff;
 }
+#contact img,
+#legal img {
+  border: 4px solid rgba(255, 255, 255, 0.8);
+}
 
 main#about,
 main#contact,
 main#legal {
-  flex: 1 0 auto; /* Prend tout l'espace restant */
+  flex: 1 0 auto;
+  /* Prend tout l'espace restant */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centre verticalement le contenu */
-  align-items: center; /* Centre horizontalement le contenu */
-  padding: 2rem; /* Ajoutez un peu de padding */
+  justify-content: center;
+  /* Centre verticalement le contenu */
+  align-items: center;
+  /* Centre horizontalement le contenu */
+  padding: 2rem;
+  /* Ajoutez un peu de padding */
 }
 
 footer {
